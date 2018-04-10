@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="There are four questions in this quiz."
+            android:textSize="16sp" />
+
+        <!--Question One-->
+        <TextView
+            style="@style/QuizQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Question One: \nYou will have to pay a fee between $25 tp $750 to register your business." />
+
+        <RadioGroup
+            android:id="@+id/q1_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/q1_true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="True" />
+
+            <RadioButton
+                android:id="@+id/q1_false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="False" />
+        </RadioGroup>
+
+        <!--Question Two-->
+        <TextView
+            style="@style/QuizQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Question Two: \nWhich of the following are business structures?" />
+
+        <CheckBox
+            android:id="@+id/q2_check1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Corporation" />
+
+        <CheckBox
+            android:id="@+id/q2_check2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LLC" />
+
+        <CheckBox
+            android:id="@+id/q2_check3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Partnership" />
+
+        <CheckBox
+            android:id="@+id/q2_check4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alliance" />
+
+        <!--Question Three-->
+        <TextView
+            style="@style/QuizQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Question Three: \nWhat is the 3-letter acronym for the fedral tax number that will identify your business?" />
+
+        <EditText
+            android:id="@+id/q3_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="- - - "
+            android:inputType="textCapCharacters"
+            android:maxLength="3" />
+
+        <!--Question Four-->
+        <TextView
+            style="@style/QuizQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Question Four: \nIt is recommended that you open bank accounts for your business that are separate from your personal accounts." />
+
+        <RadioGroup
+            android:id="@+id/q4_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/q4_true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="True" />
+
+            <RadioButton
+                android:id="@+id/q4_false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="False" />
+        </RadioGroup>
+
+        <!--Submit and reset buttons-->
+        <Button
+            style="@style/ButtonTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="submitAnswers"
+            android:text="Submit Answers" />
+
+        <Button
+            style="@style/ButtonTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="reset"
+            android:text="Reset" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
