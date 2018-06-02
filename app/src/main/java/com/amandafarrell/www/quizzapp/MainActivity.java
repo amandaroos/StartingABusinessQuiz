@@ -25,10 +25,9 @@ public class MainActivity extends AppCompatActivity {
     EditText q3EditText;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         //Question 1
         q1RadioGroup = findViewById(R.id.q1_radio_group);
@@ -38,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i){
                     case R.id.q1_false:
-                        q1 = "false";
+                        q1 = getString(R.string.answer_false);
                         break;
                     case R.id.q1_true:
-                        q1 = "true";
+                        q1 = getString(R.string.answer_true);
                         break;
                 }
 
@@ -65,10 +64,10 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i){
                     case R.id.q4_false:
-                        q4 = "false";
+                        q4 = getString(R.string.answer_false);
                         break;
                     case R.id.q4_true:
-                        q4 = "true";
+                        q4 = getString(R.string.answer_true);
                         break;
                 }
 
@@ -77,13 +76,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Called when user hits submit button
-    void submitAnswers (View view){
-
+    public void submitAnswers (View view){
         //The score starts at zero
         mScore = 0;
 
         //Check answers
-        if (q1 == "true"){
+        if (q1.equals(getString(R.string.answer_true))){
             mScore += 1;
         }
 
@@ -92,20 +90,24 @@ public class MainActivity extends AppCompatActivity {
         }
 
         String q3Answer = q3EditText.getText().toString();
-        if (q3Answer.equals("EIN") || q3Answer.equals("TIN")){
+        if (q3Answer.equals(getString(R.string.employer_identification_number)) || q3Answer.equals(getString(R.string.taxpayer_identification_number))){
             mScore += 1;
         }
 
-        if (q4 == "true"){
+        if (q4.equals(getString(R.string.answer_true))){
             mScore += 1;
         }
 
         //Display score
-        Toast.makeText(this, Integer.toString(mScore) + " out of 4 correct", Toast.LENGTH_SHORT).show();
+        if (mScore == 4){
+            Toast.makeText(this, getString(R.string.congratulations) +
+                    Integer.toString(mScore) + " " + getString(R.string.score_message), Toast.LENGTH_SHORT).show();
+        }
+        Toast.makeText(this, Integer.toString(mScore) + " " + getString(R.string.score_message), Toast.LENGTH_SHORT).show();
     }
 
     //Called when user hits reset button
-    void reset (View view){
+    public void reset (View view){
 
         //Reset the score
         mScore = 0;
@@ -115,7 +117,6 @@ public class MainActivity extends AppCompatActivity {
         q1 = "";
 
         //Q2
-        //TODO figure out why q2 is graded incorrectly
         q2c1.setChecked(false);
         q2c2.setChecked(false);
         q2c3.setChecked(false);

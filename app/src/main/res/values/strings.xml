@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">Starting A Business Quiz</string>
+    <string name="intro_text">There are four questions in this quiz.</string>
+    <string name="hint">- - -</string>
+
+    <!--Questions-->
+    <string name="q1_text">Question One: \nYou will have to pay a fee between $25 tp $750 to register your business.</string>
+    <string name="q2_text">Question Two: \nWhich of the following are business structures?</string>
+    <string name="q3_text">Question Three: \nWhat is the 3-letter acronym for the fedral tax number that will identify your business?</string>
+    <string name="q4_text">Question Four: \nIt is recommended that you open bank accounts for your business that are separate from your personal accounts.</string>
+
+    <!--Answers-->
+    <string name="answer_true">True</string>
+    <string name="answer_false">False</string>
+
+    <string name="employer_identification_number">EIN</string>
+    <string name="taxpayer_identification_number">TIN</string>
+
+    <string name="corporation">Corporation</string>
+    <string name="llc">LLC</string>
+    <string name="partnership">Partnership</string>
+    <string name="alliance">Alliance</string>
+
+    <!--Buttons-->
+    <string name="submit">Submit Answers</string>
+    <string name="reset">Reset</string>
+
+    <!--Toasts-->
+    <string name="congratulations">Congratulations!\n</string>
+    <string name="score_message"> out of 4 correct</string>
+
 </resources>
