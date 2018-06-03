@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         q1RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                switch (i){
+                switch (i) {
                     case R.id.q1_false:
                         q1 = getString(R.string.answer_false);
                         break;
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         q4RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                switch (i){
+                switch (i) {
                     case R.id.q4_false:
                         q4 = getString(R.string.answer_false);
                         break;
@@ -76,12 +76,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Called when user hits submit button
-    public void submitAnswers (View view){
+    public void submitAnswers(View view) {
         //The score starts at zero
         mScore = 0;
 
         //Check answers
-        if (q1.equals(getString(R.string.answer_true))){
+        if (q1.equals(getString(R.string.answer_true))) {
             mScore += 1;
         }
 
@@ -90,24 +90,25 @@ public class MainActivity extends AppCompatActivity {
         }
 
         String q3Answer = q3EditText.getText().toString();
-        if (q3Answer.equals(getString(R.string.employer_identification_number)) || q3Answer.equals(getString(R.string.taxpayer_identification_number))){
+        if (q3Answer.equals(getString(R.string.employer_identification_number)) || q3Answer.equals(getString(R.string.taxpayer_identification_number))) {
             mScore += 1;
         }
 
-        if (q4.equals(getString(R.string.answer_true))){
+        if (q4.equals(getString(R.string.answer_true))) {
             mScore += 1;
         }
 
         //Display score
-        if (mScore == 4){
+        if (mScore == 4) {
             Toast.makeText(this, getString(R.string.congratulations) +
                     Integer.toString(mScore) + " " + getString(R.string.score_message), Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, Integer.toString(mScore) + " " + getString(R.string.score_message), Toast.LENGTH_SHORT).show();
         }
-        Toast.makeText(this, Integer.toString(mScore) + " " + getString(R.string.score_message), Toast.LENGTH_SHORT).show();
     }
 
     //Called when user hits reset button
-    public void reset (View view){
+    public void reset(View view) {
 
         //Reset the score
         mScore = 0;
